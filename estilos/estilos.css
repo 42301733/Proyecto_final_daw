@@ -1,0 +1,14 @@
+#navbar{
+  background-color: #1E3C2A !important;
+
+  a{
+      color: #ffff !important;
+  &:hover{
+    color: #ffff !important;
+    text-decoration: underline;
+  }
+}
+}
+.navbar-brand{
+  text-transform: uppercase;
+}
