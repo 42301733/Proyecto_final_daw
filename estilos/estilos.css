@@ -12,3 +12,12 @@
 .navbar-brand{
   text-transform: uppercase;
 }
+footer{
+  background-color: #1E3C2A !important;
+  padding: 25px;
+  color: #ffff;
+  p{
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
