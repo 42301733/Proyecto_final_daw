@@ -92,11 +92,99 @@
       <!-- Script para que pueda cambiar entre imágenes -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
       <!-- Termina el Carrusel -->
-       <!-- Contenedor con las tarjetas -->
-       <div class="container">
+      <!-- Cuadro de búsqueda -->
+      <section class="container">
+        <!-- sección del formulario -->
+        <div>
+          <section class="col" id="formulario">
+            <form name="formBusqueda" id="formBusqueda" role="search">
+              <div class="mb-3">
+                <label for="cadenaBusqueda" class="form-label"
+                  >Buscar Por:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cadenaBusqueda"
+                  aria-describedby="cadenaBusquedaHelp"
+                  required
+                />
+                <!-- El aviso aparece debajo del campo y se anuncia al actualizarse. -->
+                <p
+                  id="errorBusqueda"
+                  class="text-danger small mb-0"
+                  aria-live="polite"
+                ></p>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="criterio"
+                  id="radioTitle"
+                  value="id"
+                  checked
+                />
+                <label class="form-check-label" for="radioTitle">Título</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="criterio"
+                  id="radioIdPintura"
+                  value="idPintura"
+                />
+                <label class="form-check-label" for="radioIdPintura"
+                  >Pintura</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="criterio"
+                  id="radioIdAño"
+                  value="idAño"
+                />
+                <label class="form-check-label" for="radioIdAño">Año</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="criterio"
+                  id="radioIdMovimiento"
+                  value="idMovimiento"
+                />
+                <label class="form-check-label" for="radioIdMovimiento"
+                  >Movimiento</label
+                >
+              </div>
+              <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+            </form>
+          </section>
+        </div>
+      </section>
+
+      <section class="contenedor-respuestas mt-3">
+        <div class="row mt-3 oculto" id="seccion-respuestas" hidden>
+          <div class="col-12">
+            <h2>Resultados de la búsqueda</h2>
+            <hr />
+          </div>
+          <!-- sección para mostrar los resultados-->
+          <div class="row g-3 mt-2" id="obrasArte"></div>
+        </div>
+      </section>
+      <script src="js/script.js" defer></script>
+      <p></p>
+      <!-- Termina el Cuadro de búsqueda -->
+      <!-- Contenedor con las tarjetas -->
+      <div class="container">
         <h1>Explora la colección de arte</h1>
         <p>Descubre obras y artistas de distintas épocas</p>
-        <hr />
+        <hr>
         <div class="row">
           <div class="col-12 col-md-4">
             <div class="card h-100" style="width: 90%">
@@ -104,14 +192,16 @@
                 src="imagenes/bisonte-de-altamira.JPG"
                 class="card-img-top"
                 alt="Bisonte de altamira"
-              />
+              /><!--Tarjeta de Bisonte del techo de la Gran Sala de la cueva de Altamira-->
               <div class="card-body">
                 <h2 class="card-title">
                   Bisonte del techo de la Gran Sala de la cueva de Altamira
                 </h2>
                 <p class="card-text">
                   Bisonte del techo de la Gran Sala de la cueva de Altamira
-                  Pintura rupestre prehistórica (Paleolítico Superior) realizada sobre piedra con pigmentos naturales; destaca por el volumen que aprovecha el relieve de la roca.
+                  Pintura rupestre prehistórica (Paleolítico Superior) realizada
+                  sobre piedra con pigmentos naturales; destaca por el volumen
+                  que aprovecha el relieve de la roca.
                 </p>
               </div>
             </div>
@@ -122,11 +212,13 @@
                 src="imagenes/la-creacion-del-hombre.JPG"
                 class="card-img-top"
                 alt="La creacion del hombre"
-              />
+              /><!--Tarjeta de La Creacion del Hombre-->
               <div class="card-body">
                 <h2 class="card-title">La Creación del Hombre</h2>
                 <p class="card-text">
-                  Fresco renacentista de Miguel Ángel en la bóveda de la Capilla Sixtina (c. 1511), centrado en el instante cercano al contacto entre Dios y Adán.
+                  Fresco renacentista de Miguel Ángel en la bóveda de la Capilla
+                  Sixtina (c. 1511), centrado en el instante cercano al contacto
+                  entre Dios y Adán.
                 </p>
               </div>
             </div>
@@ -137,18 +229,21 @@
                 src="imagenes/cristo-muerto.JPG"
                 class="card-img-top"
                 alt="Cristo muerto"
-              />
+              /><!--Tarjeta de Cristo Muerto-->
               <div class="card-body">
                 <h2 class="card-title">Cristo Muerto</h2>
                 <p class="card-text">
-                  Pintura al temple sobre lienzo de Andrea Mantegna (c. 1480), célebre por su marcado escorzo frontal y el dramatismo de la escena.
+                  Pintura al temple sobre lienzo de Andrea Mantegna (c. 1480),
+                  célebre por su marcado escorzo frontal y el dramatismo de la
+                  escena.
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </div>   
+      </div>
     </main>
+    <!--Footer-->
     <footer>
       <p>Campus Jalpa - Arte y Cultura</p>
     </footer>

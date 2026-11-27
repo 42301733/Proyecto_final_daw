@@ -1,23 +1,78 @@
+/*Aplica el color verde a la barra de navegación*/
 #navbar{
   background-color: #1E3C2A !important;
-
+/*Pone en color blanco los enlaces de la barra de navegación*/
   a{
       color: #ffff !important;
+      /*Se subraya el link de blanco al pasar el mouse*/
   &:hover{
     color: #ffff !important;
     text-decoration: underline;
   }
 }
 }
+/*Transforma el texto Campus Jalpa Arte y Cultura a mayúsculas*/
 .navbar-brand{
   text-transform: uppercase;
 }
+/*Le agrega el mismo color que la barra de navegación y tiene un padding de 25px y el texto lo pone de blanco*/
 footer{
   background-color: #1E3C2A !important;
   padding: 25px;
   color: #ffff;
+  /*Aumenta el tamaño y pone en negritas el parráfo que esta dentro del footer*/
   p{
     font-size: 25px;
     font-weight: bold;
   }
+}
+/*Cambia el color de la pantalla*/
+body{
+  background-color: #FBF5EE !important;
+}
+/*Le cambia el estilo al contenedor del cuadro de búsqueda así como su padding y su borde*/
+.container{
+  background-color: #D6CCC0;
+  padding: 15px;
+  border-radius: 10px;
+}
+/*Le pone margenes de 10px a toda la etiqueta main*/
+main{
+  margin: 10px;
+}
+/*Se le asigna el tamaño a todos los h2*/
+h2{
+  font-size: 18px !important;
+}
+/*Se le agrega color, padding, bordes y márgenes al cuadro de búsqueda*/
+#cuadro-de-busqueda {
+  background-color: aliceblue;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin: 20px;
+}
+/*Se le agrega estilo a la sección donde van a estar las búsquedas de las imágenes*/
+#seccion-respuestas {
+  background-color: #e6e9eb;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin: 20px;
+}
+/*Este selector de clase tiene de color blanco y padding y márgin de 10px y un border de 5px*/
+.publicacion {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+/*Este contenedor tiene un márgen arriba de 40px*/
+.container{
+  margin-top: 40px;
+}
+/*Esta sección tiene un márgen de 15% de izquierda y derecha*/
+#seccion-respuestas{
+  margin-left: 15%;
+  margin-right: 15%;
 }
