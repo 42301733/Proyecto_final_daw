@@ -8,6 +8,7 @@ const bloqueResultados = document.getElementById("seccion-respuestas");
 const listaObras = document.getElementById("obrasArte");
 const btnEnviar = formBusqueda.querySelector('button[type="submit"]');
 
+
 // Dirección base a la que se agrega el criterio de cada búsqueda.
 const endpointObras = "https://nearness-cyclist-debtor.ngrok-free.dev/pf/obras/index.php";
 
@@ -116,6 +117,30 @@ async function ejecutarBusqueda(evento) {
         if (!Array.isArray(catalogoRecibido)) {
             throw new Error("La API no devolvió un arreglo de obras.");
         }
+        const filtroNormalizado = limpiarTextoComparacion(textoBuscado);
+        /**/
+        const obrasFiltradas = catalogoRecibido.filter((pieza) => {
+            if (campoFiltro === "id") {
+                return limpiarTextoComparacion(pieza.titulo).includes(filtroNormalizado)
+                    || limpiarTextoComparacion(pieza.id).includes(filtroNormalizado);
+            }
+            if (campoFiltro === "idPintura") {
+                return limpiarTextoComparacion(pieza.tipo).includes(filtroNormalizado);
+            }
+            if (campoFiltro === "idAño") {
+                return limpiarTextoComparacion(pieza.anio).includes(filtroNormalizado);
+            }
+            if (campoFiltro === "idMovimiento") {
+                return limpiarTextoComparacion(pieza.movimiento).includes(filtroNormalizado);
+            }
+            return true;
+        });
+
+        // Un arreglo vacío indica que la consulta terminó sin coincidencias.
+        if (obrasFiltradas.length === 0) {
+            mensajeAviso.textContent = "No se encontraron obras para esa búsqueda.";
+            return;
+        }
 
         // Un arreglo vacío indica que la consulta terminó sin coincidencias.
         if (catalogoRecibido.length === 0) {
@@ -131,7 +156,7 @@ async function ejecutarBusqueda(evento) {
             .replaceAll('"', "&quot;");
 
         // Cada obra agrega una ficha con su imagen y sus datos al HTML de salida.
-        catalogoRecibido.forEach((pieza) => {
+        obrasFiltradas.forEach((pieza) => {
             const encabezadoObra = escaparTexto(pieza.titulo);
             const { principal, respaldo } = resolverRutasImagen(pieza);
             let bloqueImagen = "";
